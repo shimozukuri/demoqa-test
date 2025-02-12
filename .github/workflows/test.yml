@@ -15,5 +15,7 @@ jobs:
         run: docker network create selenoid
       - name: Pull chrome driver
         run: docker pull selenoid/chrome:latest
-      - name: Docker Compose
+      - name: Docker compose
         run: docker compose up
+      - name: End
+        run: docker logs -f ui-tests
