@@ -11,5 +11,7 @@ jobs:
     steps:
       - name: Get repository code
         uses: actions/checkout@v4
+      - name: Create docker network
+        run: docker network create selenoid
       - name: Docker Compose
         run: docker compose up
