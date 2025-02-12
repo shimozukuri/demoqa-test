@@ -2,8 +2,7 @@ version: '3.5'
 
 networks:
   selenoid:
-    external:
-      name: selenoid
+    driver: bridge
 
 services:
   selenoid:
