@@ -1,5 +1,9 @@
 version: '3.5'
 
+networks:
+  selenoid:
+    driver: bridge
+
 services:
   selenoid:
     container_name: selenoid
