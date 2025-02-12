@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Get repository code
         uses: actions/checkout@v4
+      - name: Create selenoid network
+        run: docker network create selenoid
       - name: Pull chrome driver
         run: docker pull selenoid/chrome:latest
       - name: Docker Compose
