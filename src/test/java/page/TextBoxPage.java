@@ -1,6 +1,7 @@
 package page;
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -18,43 +19,52 @@ public class TextBoxPage {
     private final SelenideElement currentAddress = $x("//p[@id='currentAddress']");
     private final SelenideElement permanentAddress = $x("//p[@id='permanentAddress']");
 
+    @Step("Filling 'Full Name' field")
     public TextBoxPage fillUsernameField(String username) {
         usernameField.sendKeys(username);
         return this;
     }
 
+    @Step("Filling 'Email' field")
     public TextBoxPage fillEmailField(String email) {
         emailField.sendKeys(email);
         return this;
     }
 
-    public TextBoxPage fillCurrentAddress(String currentAddress) {
+    @Step("Filling 'Current Address' field")
+    public TextBoxPage fillCurrentAddressField(String currentAddress) {
         currentAddressField.sendKeys(currentAddress);
         return this;
     }
 
-    public TextBoxPage fillPermanentAddress(String permanentAddress) {
+    @Step("Filling 'Permanent Address' field")
+    public TextBoxPage fillPermanentAddressField(String permanentAddress) {
         permanentAddressField.sendKeys(permanentAddress);
         return this;
     }
 
-    public TextBoxPage submit() {
+    @Step("Clicking 'Submit' button")
+    public TextBoxPage clickSubmitButton() {
         submitButton.click();
         return this;
     }
 
+    @Step("Getting 'Name' result value")
     public String getName() {
         return name.getText().split(":")[1];
     }
 
+    @Step("Getting 'Email' result value")
     public String getEmail() {
         return email.getText().split(":")[1];
     }
 
+    @Step("Getting 'Current Address' result value")
     public String getCurrentAddress() {
         return currentAddress.getText().split(":")[1];
     }
 
+    @Step("Getting 'Permanent' result value")
     public String getPermanentAddress() {
         return permanentAddress.getText().split(":")[1];
     }

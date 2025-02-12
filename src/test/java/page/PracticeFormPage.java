@@ -1,6 +1,7 @@
 package page;
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
 import java.io.File;
@@ -41,21 +42,25 @@ public class PracticeFormPage {
     private final SelenideElement studentAddress = $x("//td[text()='Address']/../td[2]");
     private final SelenideElement studentStateAndCity = $x("//td[text()='State and City']/../td[2]");
 
+    @Step("Filling 'First Name' field")
     public PracticeFormPage fillFirstNameField(String firstName) {
         firstNameField.sendKeys(firstName);
         return this;
     }
 
+    @Step("Filling 'Last Name' field")
     public PracticeFormPage fillLastNameField(String lastName) {
         lastNameField.sendKeys(lastName);
         return this;
     }
 
+    @Step("Filling 'Email' field")
     public PracticeFormPage fillUserEmailField(String email) {
         userEmailField.sendKeys(email);
         return this;
     }
 
+    @Step("Clicking 'Gender' button")
     public PracticeFormPage selectGender(String gender) {
         switch (gender) {
             case "Male":
@@ -67,16 +72,18 @@ public class PracticeFormPage {
             case "Other":
                 genderOtherRadio.click();
                 return this;
+            default:
+                return this;
         }
-
-        return this;
     }
 
+    @Step("Filling 'Mobile' field")
     public PracticeFormPage fillUserNumberField(String number) {
         userNumberField.sendKeys(number);
         return this;
     }
 
+    @Step("Specifying date of birth")
     public PracticeFormPage fillDateOfBirthInput() {
         dateOfBirthInput.click();
         dateOfBirthMonthDecember.click();
@@ -85,90 +92,109 @@ public class PracticeFormPage {
         return this;
     }
 
+    @Step("Filling 'Subjects' field")
     public PracticeFormPage fillSubjectsField(String subject) {
         subjectsField.sendKeys(subject);
         subjectsField.pressEnter();
         return this;
     }
 
+    @Step("Selecting 'Hobbies - Sports' check box")
     public PracticeFormPage selectHobbiesSports() {
         hobbiesSports.click();
         return this;
     }
 
+    @Step("Selecting 'Hobbies - Reading' check box")
     public PracticeFormPage selectHobbiesReading() {
         hobbiesReading.click();
         return this;
     }
 
+    @Step("Selecting 'Hobbies - Music' check box")
     public PracticeFormPage selectHobbiesMusic() {
         hobbiesMusic.click();
         return this;
     }
 
+    @Step("Uploading picture")
     public PracticeFormPage uploadPicture(File file) {
         uploadPictureField.uploadFile(file);
         return this;
     }
 
+    @Step("Filling 'Current Address' field")
     public PracticeFormPage fillCurrentAddressField(String address) {
         currentAddressField.sendKeys(address);
         return this;
     }
 
+    @Step("Filling 'State' field")
     public PracticeFormPage fillStateField(String state) {
         stateField.sendKeys(state);
         stateField.pressEnter();
         return this;
     }
 
+    @Step("Filling 'City' field")
     public PracticeFormPage fillCityField(String city) {
         cityField.sendKeys(city);
         cityField.pressEnter();
         return this;
     }
 
+    @Step("Clicking 'Submit' button")
     public PracticeFormPage clickSubmitButton() {
         submit.click();
         return this;
     }
 
+    @Step("Getting resulting 'Student Name' value")
     public String getStudentName() {
         return studentName.getText();
     }
 
+    @Step("Getting resulting 'Student Email' value")
     public String getStudentEmail() {
         return studentEmail.getText();
     }
 
+    @Step("Getting resulting 'Gender' value")
     public String getStudentGender() {
         return studentGender.getText();
     }
 
+    @Step("Getting resulting 'Mobile' value")
     public String getStudentNumber() {
         return studentNumber.getText();
     }
 
+    @Step("Getting resulting 'Date of Birth' value")
     public String getStudentDateOfBirth() {
         return studentDateOfBirth.getText();
     }
 
+    @Step("Getting resulting 'Subjects' value")
     public String getStudentSubjects() {
         return studentSubjects.getText();
     }
 
+    @Step("Getting resulting 'Hobbies' value")
     public String getStudentHobbies() {
         return studentHobbies.getText();
     }
 
+    @Step("Getting resulting 'Picture' value")
     public String getStudentPicture() {
         return studentPicture.getText();
     }
 
+    @Step("Getting resulting 'Address' value")
     public String getStudentAddress() {
         return studentAddress.getText();
     }
 
+    @Step("Getting resulting 'State and City' value")
     public String getStudentStateAndCity() {
         return studentStateAndCity.getText();
     }
