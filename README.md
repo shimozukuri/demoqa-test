@@ -1,6 +1,6 @@
 # demoqa-test
 
-The project implements UI autotests for the website [demoqa.com](https://demoqa.com). The **Page Object** pattern, **Allure** steps and description are implemented, and a screenshot is uploaded to the report when a failure occurs. The tests are run in 5 threads in **Selenoid** deployed in **Docker**
+The project implements UI autotests for the website [demoqa.com](https://demoqa.com). The **Page Object** pattern, **Allure** steps and description are implemented, and a screenshot is uploaded to the report when a failure occurs. The tests are run in 5 threads in **Selenoid** deployed in **Docker**. Implemented retry tests in case of Flaky occurrence.
 
 ## Stack
 - Java 17
